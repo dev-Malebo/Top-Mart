@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TopMart Hyper | One Stop Shop — Mahikeng</title>
+  <meta name="description" content="TopMart Hyper Mahikeng — your true one-stop shop in Golf View. Groceries, DIY, stationery, household essentials and more. 4.7★ on Google.">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1724;
+      --ink-soft: #475467;
+      --ink-muted: #8794a8;
+      --bg: #f8f9fc;
+      --bg-warm: #fef8f2;
+      --bg-card: #ffffff;
+      --bg-elev: #eef1f7;
+      --border: #e2e8f0;
+      --border-strong: #cbd5e1;
+      --red: #e63946;
+      --red-dim: #c92d39;
+      --red-soft: #ffe8ea;
+      --blue: #1d4ed8;
+      --blue-soft: #e6eeff;
+      --yellow: #fbbf24;
+      --yellow-soft: #fef7e2;
+      --green: #10b981;
+      --green-soft: #d9f7ec;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Archivo Black', 'Inter', sans-serif;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      background: var(--red);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-family: 'Archivo Black', sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+    }
+    .logo-text { line-height: 1.1; }
+    .logo-text strong {
+      font-family: 'Archivo Black', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      color: var(--ink);
+      display: block;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+    .logo-text small {
+      font-size: 0.6rem;
+      color: var(--red);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      transition: color 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 11px 22px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 14px rgba(230, 57, 70, 0.3);
+    }
+    .nav-cta:hover {
+      background: var(--red-dim);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(230, 57, 70, 0.45);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--red);
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 150px 24px 80px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-warm);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(230, 57, 70, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.1), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 800;
+      background: var(--red-soft);
+      padding: 8px 18px;
+      border-radius: 40px;
+      margin-bottom: 26px;
+    }
+    .hero-tag::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      margin-bottom: 22px;
+      letter-spacing: -0.03em;
+      line-height: 0.98;
+    }
+    .hero h1 span {
+      color: var(--red);
+      position: relative;
+      display: inline-block;
+    }
+    .hero h1 span::after {
+      content: "";
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: var(--yellow);
+      opacity: 0.4;
+      z-index: -1;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      max-width: 540px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      letter-spacing: 0.02em;
+    }
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      box-shadow: 0 6px 18px rgba(230, 57, 70, 0.3);
+    }
+    .btn-primary:hover {
+      background: var(--red-dim);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(230, 57, 70, 0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--border-strong);
+    }
+    .btn-outline:hover {
+      border-color: var(--ink);
+      background: var(--white);
+    }
+    .hero-trust {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+    }
+    .hero-trust-item strong {
+      color: var(--ink);
+      font-weight: 800;
+      font-family: 'Archivo Black', sans-serif;
+    }
+    .hero-trust-icon { color: var(--red); font-size: 1.1rem; }
+    .hero-stars { color: var(--yellow); letter-spacing: 2px; }
+
+    /* Hero visual — category cards */
+    .hero-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .hero-cat {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 20px;
+      transition: all 0.25s;
+      box-shadow: 0 2px 8px rgba(15, 23, 36, 0.04);
+    }
+    .hero-cat:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(15, 23, 36, 0.08);
+      border-color: var(--border-strong);
+    }
+    .hero-cat-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+    }
+    .hero-cat-icon.r { background: var(--red-soft); }
+    .hero-cat-icon.b { background: var(--blue-soft); }
+    .hero-cat-icon.y { background: var(--yellow-soft); }
+    .hero-cat-icon.g { background: var(--green-soft); }
+    .hero-cat h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--ink);
+      margin-bottom: 3px;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .hero-cat p {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+    }
+
+    /* ===== INFO STRIP ===== */
+    .info-strip {
+      background: var(--white);
+      padding: 22px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .info-strip-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .info-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+    .info-strip-item strong { color: var(--ink); font-weight: 700; }
+    .info-strip-icon { color: var(--red); }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 100px 24px; }
+    .container { max-width: 1280px; margin: 0 auto; }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 64px;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label::before {
+      content: "";
+      width: 24px;
+      height: 3px;
+      background: var(--red);
+      border-radius: 2px;
+    }
+    .section-title {
+      font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+      margin-bottom: 18px;
+      color: var(--ink);
+    }
+    .section-title span { color: var(--red); }
+    .section-intro {
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    /* ===== ABOUT ===== */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-visual {
+      aspect-ratio: 4 / 5;
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, #e63946, #c92d39),
+        radial-gradient(circle at 30% 30%, rgba(251,191,36,0.4), transparent 60%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 20px 20px 0 var(--yellow);
+    }
+    .about-visual::after {
+      content: "🛒";
+      opacity: 0.85;
+    }
+    .about-text p {
+      color: var(--ink-soft);
+      margin-bottom: 18px;
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .about-stat strong {
+      display: block;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.9rem;
+      color: var(--red);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .about-stat span {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* ===== CATEGORIES ===== */
+    #categories { background: var(--bg); }
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .cat-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .cat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(15, 23, 36, 0.08);
+      border-color: var(--border-strong);
+    }
+    .cat-card:hover::before { transform: scaleX(1); }
+    .cat-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: var(--bg-elev);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+    .cat-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      text-transform: none;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .cat-card p {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    /* ===== WHY US ===== */
+    #why { background: var(--ink); color: var(--white); }
+    #why .section-label { color: var(--yellow); }
+    #why .section-label::before { background: var(--yellow); }
+    #why .section-title { color: var(--white); }
+    #why .section-title span { color: var(--yellow); }
+    #why .section-intro { color: rgba(255,255,255,0.7); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+    .why-item {
+      padding: 30px 28px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      transition: all 0.25s;
+    }
+    .why-item:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(251, 191, 36, 0.4);
+      transform: translateY(-4px);
+    }
+    .why-num {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--yellow);
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+    .why-item h3 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-transform: none;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .why-item p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.65;
+    }
+
+    /* ===== REVIEWS ===== */
+    #reviews { background: var(--white); }
+    .reviews-top {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 40px;
+      background: var(--bg-warm);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+    .reviews-score {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .reviews-score-num {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .reviews-score-meta {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+    .reviews-score-stars {
+      color: var(--yellow);
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .reviews-divider {
+      width: 1px;
+      height: 70px;
+      background: var(--border-strong);
+    }
+    .reviews-summary {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      max-width: 480px;
+      line-height: 1.7;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .review-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: all 0.25s;
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(15, 23, 36, 0.06);
+      border-color: var(--border-strong);
+    }
+    .review-quote {
+      color: var(--red);
+      font-size: 2.8rem;
+      font-family: Georgia, serif;
+      line-height: 1;
+      margin-bottom: 12px;
+      opacity: 0.5;
+    }
+    .review-card .stars {
+      color: var(--yellow);
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .review-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--ink);
+      margin-bottom: 22px;
+      font-style: italic;
+    }
+    .review-author {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ===== VISIT ===== */
+    #visit { background: var(--bg); }
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .visit-block { margin-bottom: 32px; }
+    .visit-block h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-transform: none;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .visit-block h4 span {
+      color: var(--red);
+      font-size: 1.1rem;
+    }
+    .visit-block p, .visit-block a {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .visit-block a { font-weight: 600; }
+    .visit-block a:hover { color: var(--red); }
+    .hours-list {
+      list-style: none;
+      margin-top: 10px;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 8px 18px;
+      border: 1px solid var(--border);
+    }
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+    .hours-list li:last-child { border: none; }
+    .hours-list li strong { color: var(--ink); font-weight: 700; }
+    .hours-list li .today {
+      color: var(--red);
+      font-weight: 700;
+    }
+    .visit-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .visit-actions .btn { padding: 14px 26px; font-size: 0.85rem; }
+    .map-embed {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-elev);
+    }
+    .map-embed iframe { width: 100%; height: 100%; border: 0; }
+
+    /* ===== CTA FINAL ===== */
+    .cta-final {
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-dim) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 100px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final::before {
+      content: "";
+      position: absolute;
+      top: -50%; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 900px;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.2), transparent 60%);
+      pointer-events: none;
+    }
+    .cta-final-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .cta-final h2 {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      margin-bottom: 18px;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .cta-final p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 36px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .cta-final-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--red);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    }
+    .btn-white:hover {
+      background: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+    .btn-dark-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.4);
+    }
+    .btn-dark-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.8);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #060a12;
+      color: rgba(255,255,255,0.6);
+      padding: 60px 24px 30px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+    .footer-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    .footer-links {
+      display: flex;
+      gap: 26px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+      font-weight: 500;
+    }
+    .footer-links a:hover { color: var(--yellow); }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 90;
+      background: var(--red);
+      color: var(--white);
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 6px 24px rgba(230, 57, 70, 0.4);
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero { padding: 120px 20px 60px; }
+      .hero-visual { grid-template-columns: 1fr 1fr; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-visual { aspect-ratio: 4 / 3; box-shadow: 12px 12px 0 var(--yellow); }
+
+      .visit-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: var(--white);
+        padding: 22px;
+        gap: 18px;
+        border-bottom: 1px solid var(--border);
+        align-items: flex-start;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+
+      section { padding: 60px 20px; }
+      .hero-trust { gap: 20px; font-size: 0.78rem; }
+      .reviews-top { padding: 28px; flex-direction: column; align-items: flex-start; gap: 24px; }
+      .reviews-divider { display: none; }
+      .info-strip-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-visual { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2rem; }
+      .section-title { font-size: 1.8rem; }
+      .about-stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav>
+    <div class="inner">
+      <a href="#top" class="nav-logo">
+        <div class="logo-mark">T</div>
+        <div class="logo-text">
+          <strong>TopMart</strong>
+          <small>Hyper Mahikeng</small>
+        </div>
+      </a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+      <div class="nav-links">
+        <a href="#about" onclick="document.querySelector('.nav-links').classList.remove('open')">About</a>
+        <a href="#categories" onclick="document.querySelector('.nav-links').classList.remove('open')">Departments</a>
+        <a href="#why" onclick="document.querySelector('.nav-links').classList.remove('open')">Why TopMart</a>
+        <a href="#reviews" onclick="document.querySelector('.nav-links').classList.remove('open')">Reviews</a>
+        <a href="#visit" onclick="document.querySelector('.nav-links').classList.remove('open')">Visit</a>
+        <a href="https://www.facebook.com/topmarthyper" class="nav-cta" target="_blank" rel="noopener">Shop Info</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">One Stop Shop • Golf View</div>
+        <h1>Everything you need. <span>Under one roof.</span></h1>
+        <p class="hero-sub">
+          From your weekly groceries to DIY supplies, stationery, household essentials, and everything in between — TopMart Hyper Mahikeng is your true one-stop destination.
+        </p>
+        <div class="hero-actions">
+          <a href="https://www.facebook.com/topmarthyper" class="btn btn-primary" target="_blank" rel="noopener">📱 Message Us</a>
+          <a href="#categories" class="btn btn-outline">See Departments</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <span class="hero-trust-icon hero-stars">★★★★★</span>
+            <span><strong>4.7</strong> on Google (23 reviews)</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="hero-trust-icon">📣</span>
+            <span><strong>7.4K+</strong> Facebook followers</span>
+          </div>
+          <div class="hero-trust-item">
+            <span class="hero-trust-icon">⏱️</span>
+            <span><strong>15 min</strong> average visit</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-cat">
+          <div class="hero-cat-icon r">🛒</div>
+          <h4>Groceries</h4>
+          <p>Everyday essentials</p>
+        </div>
+        <div class="hero-cat">
+          <div class="hero-cat-icon b">🏠</div>
+          <h4>Household</h4>
+          <p>Home & cleaning</p>
+        </div>
+        <div class="hero-cat">
+          <div class="hero-cat-icon y">🛠️</div>
+          <h4>DIY & Hardware</h4>
+          <p>Tools and supplies</p>
+        </div>
+        <div class="hero-cat">
+          <div class="hero-cat-icon g">✏️</div>
+          <h4>Stationery</h4>
+          <p>School & office</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INFO STRIP ===== -->
+  <div class="info-strip">
+    <div class="info-strip-inner">
+      <div class="info-strip-item">
+        <span class="info-strip-icon">📍</span>
+        <span><strong>Cnr Robinson St & Tillard St</strong>, Golf View, Mahikeng</span>
+      </div>
+      <div class="info-strip-item">
+        <span class="info-strip-icon">🕒</span>
+        <span>Open Weekdays: <strong>8 AM – 8 PM</strong></span>
+      </div>
+      <div class="info-strip-item">
+        <span class="info-strip-icon">⭐</span>
+        <span><strong>4.7 ★</strong> · 23 Google reviews</span>
+      </div>
+      <div class="info-strip-item">
+        <span class="info-strip-icon">💬</span>
+        <span>DM for inquiries on <strong>Facebook</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual"></div>
+        <div class="about-text">
+          <div class="section-label">About TopMart Hyper</div>
+          <h2 class="section-title">A store built on <span>service</span>.</h2>
+          <p>
+            TopMart Hyper Mahikeng has become a local favourite for one simple reason: we treat every customer like a neighbour. Whether you're doing a big monthly shop, grabbing a quick item on the way home, or picking up stationery for the kids — you'll find everything here under one roof.
+          </p>
+          <p>
+            Our team is known for smiles, helpful service, and making sure you leave with exactly what you came for. From DIY to groceries to household supplies — it's all here at TopMart.
+          </p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <strong>4.7★</strong>
+              <span>Google Rating</span>
+            </div>
+            <div class="about-stat">
+              <strong>7.4K+</strong>
+              <span>Facebook Followers</span>
+            </div>
+            <div class="about-stat">
+              <strong>15 min</strong>
+              <span>Average visit</span>
+            </div>
+            <div class="about-stat">
+              <strong>All-in-1</strong>
+              <span>One Stop Shop</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section id="categories">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">What We Stock</span>
+        <h2 class="section-title">Your true <span>one-stop shop</span>.</h2>
+        <p class="section-intro">
+          From weekly essentials to those one-off items you need for a project at home — TopMart Hyper has you covered.
+        </p>
+      </div>
+
+      <div class="categories-grid">
+        <div class="cat-card">
+          <div class="cat-icon">🛒</div>
+          <h3>Groceries</h3>
+          <p>Everyday food and household essentials for the whole family.</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">🧼</div>
+          <h3>Household & Cleaning</h3>
+          <p>Cleaning products, kitchenware, and home essentials.</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">🛠️</div>
+          <h3>DIY & Hardware</h3>
+          <p>Tools, supplies, and everything for your next DIY project.</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">✏️</div>
+          <h3>Stationery</h3>
+          <p>School supplies, office essentials, and gifts — recently expanded in Mahikeng.</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">🎁</div>
+          <h3>General Merchandise</h3>
+          <p>Housewares, gifts, and general merchandise under one roof.</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">👕</div>
+          <h3>Apparel & Accessories</h3>
+          <p>Clothing, footwear, and accessories for the whole family.</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">🍳</div>
+          <h3>Kitchen & Homeware</h3>
+          <p>Cookware, crockery, and kitchen items to stock your home.</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">🧴</div>
+          <h3>Personal Care</h3>
+          <p>Toiletries, cosmetics, and personal care essentials.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section id="why">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">Why Customers Choose Us</span>
+        <h2 class="section-title">Friendly service. <span>Affordable prices.</span></h2>
+        <p class="section-intro">
+          Our 4.7-star rating says it best — customers keep coming back because they feel welcome here.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <h3>One Stop Shop</h3>
+          <p>Everything you need in one place — no more running between shops for essentials.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <h3>Affordable Prices</h3>
+          <p>Competitive pricing on groceries, household items, stationery, and DIY supplies.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <h3>Always Smiling</h3>
+          <p>Our tellers are known for making customers feel welcome — any time of day.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <h3>Latest Products</h3>
+          <p>We keep our shelves stocked with the latest essentials and new arrivals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">Real Customer Reviews</span>
+        <h2 class="section-title">What Mahikeng is <span>saying</span>.</h2>
+      </div>
+
+      <div class="reviews-top">
+        <div class="reviews-score">
+          <div class="reviews-score-num">4.7</div>
+          <div class="reviews-score-meta">
+            <span class="reviews-score-stars">★★★★★</span>
+            Based on <strong>23 Google reviews</strong>
+          </div>
+        </div>
+        <div class="reviews-divider"></div>
+        <div class="reviews-summary">
+          Our customers consistently mention great service, affordable prices, and the convenience of finding everything in one place. A true one-stop shop in Mahikeng.
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-quote">"</div>
+          <span class="stars">★★★★★</span>
+          <p>Beautiful service, affordable prices. Latest products.</p>
+          <div class="review-author">— Google Review</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-quote">"</div>
+          <span class="stars">★★★★★</span>
+          <p>Always the best service. One stop shop advantageous. U always get smile from the tellers anytime of the day.</p>
+          <div class="review-author">— Google Review</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-quote">"</div>
+          <span class="stars">★★★★★</span>
+          <p>Great One stop shop for everything and DIY.</p>
+          <div class="review-author">— Google Review</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VISIT ===== -->
+  <section id="visit">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-label">Visit Us</span>
+        <h2 class="section-title">Find us in <span>Golf View</span>.</h2>
+        <p class="section-intro">
+          Open seven days a week. Easy to find, easy to park, and always ready to welcome you.
+        </p>
+      </div>
+
+      <div class="visit-grid">
+        <div>
+          <div class="visit-block">
+            <h4><span>📍</span> Address</h4>
+            <p>Cnr Robinson Street & Tillard Street<br>Golf View<br>Mahikeng, 2745</p>
+          </div>
+
+          <div class="visit-block">
+            <h4><span>🕒</span> Trading Hours</h4>
+            <ul class="hours-list">
+              <li><span>Monday – Friday</span> <strong>8:00 AM – 8:00 PM</strong></li>
+              <li><span>Saturday</span> <strong>8:00 AM – 8:00 PM</strong></li>
+              <li><span>Sunday</span> <strong>8:30 AM – 3:00 PM</strong></li>
+            </ul>
+          </div>
+
+          <div class="visit-block">
+            <h4><span>💬</span> Get In Touch</h4>
+            <p>DM us on <a href="https://www.facebook.com/topmarthyper" target="_blank" rel="noopener">Facebook</a> for any inquiries — we reply fast.</p>
+          </div>
+
+          <div class="visit-actions">
+            <a href="https://www.facebook.com/topmarthyper" class="btn btn-primary" target="_blank" rel="noopener">📱 Message on Facebook</a>
+            <a href="https://www.google.com/maps?q=TopMart+Hyper,+Cnr+Robinson+St+%26+Tillard+St,+Golf+View,+Mahikeng,+2745" class="btn btn-outline" target="_blank" rel="noopener">🗺️ Get Directions</a>
+          </div>
+        </div>
+
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=TopMart+Hyper,+Cnr+Robinson+St+%26+Tillard+St,+Golf+View,+Mahikeng,+2745&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="TopMart Hyper Mahikeng location">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-final">
+    <div class="cta-final-inner">
+      <h2>Come see why we're 4.7 stars.</h2>
+      <p>
+        TopMart Hyper Mahikeng — everything you need, one friendly place, seven days a week.
+      </p>
+      <div class="cta-final-actions">
+        <a href="https://www.google.com/maps?q=TopMart+Hyper,+Cnr+Robinson+St+%26+Tillard+St,+Golf+View,+Mahikeng,+2745" class="btn btn-white" target="_blank" rel="noopener">🗺️ Get Directions</a>
+        <a href="https://www.facebook.com/topmarthyper" class="btn btn-dark-outline" target="_blank" rel="noopener">📱 Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-logo">TopMart Hyper</div>
+    <div class="footer-tag">Mahikeng • One Stop Shop</div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#categories">Departments</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit Us</a>
+      <a href="https://www.facebook.com/topmarthyper" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <div class="footer-copy">
+      © 2026 TopMart Hyper Mahikeng. All rights reserved.
+    </div>
+  </footer>
+
+  <a href="https://www.facebook.com/topmarthyper" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Message on Facebook">💬</a>
+
+</body>
+</html>
